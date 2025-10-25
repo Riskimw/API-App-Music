@@ -21,6 +21,8 @@ class AuthController extends Controller
         }
 
         $user = Auth::user();
+
+         /** @var \App\Models\User $user */ // <-- TAMBAHKAN BARIS INI
         $token = $user->createToken('TokenAuth')->plainTextToken;
 
         return response()->json([
